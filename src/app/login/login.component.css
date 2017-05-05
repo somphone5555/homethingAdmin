@@ -1,0 +1,16 @@
+.cardLogin {
+ margin-top: 5rem;
+}
+#login {
+  background-color: red;
+  color: white;
+  width: 50%;
+  left: 25%;
+
+}
+md-input-container {
+  width: 100%;
+}
+h1 {
+  text-align: center;
+}

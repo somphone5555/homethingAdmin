@@ -1,0 +1,30 @@
+
+.led {
+  color: red;
+  right: 10px;
+  top: 20px;
+  position: absolute;
+
+}
+
+md-card {
+ margin: 0.5rem;
+}
+
+
+.btn-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+
+md-grid-tile {
+  margin-top: 5rem;
+
+
+}
+
+md-grid-list {
+  justify-content: center;
+}

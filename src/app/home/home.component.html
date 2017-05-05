@@ -1,3 +1,93 @@
-<p>
-  home works!
-</p>
+
+  <md-grid-list cols="{{cols}}" rowHeight="400px">
+    <md-grid-tile></md-grid-tile>
+    <md-grid-tile colspan="3">
+
+      <md-card>
+        <md-card-header>
+          <button md-icon-button [mdMenuTriggerFor]="menu" class="menu">
+            <md-icon>more_vert</md-icon>
+          </button>
+          <md-icon class="led">lens</md-icon>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item>
+              <md-icon>dialpad</md-icon>
+              <span>Redial</span>
+            </button>
+            <button md-menu-item disabled>
+              <md-icon>voicemail</md-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button md-menu-item>
+              <md-icon>notifications_off</md-icon>
+              <span>Disable alerts</span>
+            </button>
+          </md-menu>
+        </md-card-header>
+        <img src="http://placehold.it/250x250" md-card-image alt="">
+        <md-card-content>
+            <h3>Name of Device</h3>
+        </md-card-content>
+      </md-card>
+
+      <md-card>
+        <md-card-header>
+          <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>more_vert</md-icon>
+          </button>
+          <md-icon class="led">lens</md-icon>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item>
+              <md-icon>dialpad</md-icon>
+              <span>Redial</span>
+            </button>
+            <button md-menu-item disabled>
+              <md-icon>voicemail</md-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button md-menu-item>
+              <md-icon>notifications_off</md-icon>
+              <span>Disable alerts</span>
+            </button>
+          </md-menu>
+        </md-card-header>
+        <img src="http://placehold.it/250x250" md-card-image alt="">
+        <md-card-content>
+          <h3>Name of Device</h3>
+        </md-card-content>
+      </md-card>
+
+      <md-card>
+        <md-card-header>
+          <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>more_vert</md-icon>
+          </button>
+          <md-icon class="led">lens</md-icon>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item>
+              <md-icon>dialpad</md-icon>
+              <span>Redial</span>
+            </button>
+            <button md-menu-item disabled>
+              <md-icon>voicemail</md-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button md-menu-item>
+              <md-icon>notifications_off</md-icon>
+              <span>Disable alerts</span>
+            </button>
+          </md-menu>
+        </md-card-header>
+        <img src="http://placehold.it/250x250" md-card-image alt="">
+        <md-card-content>
+          <h3>Name of Device</h3>
+        </md-card-content>
+      </md-card>
+    </md-grid-tile>
+    <md-grid-tile></md-grid-tile>
+    <button md-fab class="btn-fab">
+      <md-icon>add</md-icon>
+    </button>
+  </md-grid-list>
+
+

@@ -1,0 +1,19 @@
+md-input-container {
+  width: 100%;
+}
+md-card {
+  margin-top: 5rem;
+  text-align: center;
+
+}
+
+#btnadd {
+  background-color: red;
+  color: white;
+  width: 50%;
+
+}
+
+#void {
+  height: 50px;
+}
