@@ -1,7 +1,9 @@
 md-input-container {
   width: 100%;
+  margin-bottom: 1rem;
 }
-md-card {
+
+.cardAdd {
   margin-top: 5rem;
   text-align: center;
 
@@ -15,5 +17,13 @@ md-card {
 }
 
 #void {
-  height: 50px;
+  height: 100px;
+}
+.qrsection {
+  margin-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+
 }

@@ -1,19 +1,11 @@
+<md-toolbar color="primary">
+  <span fxFlex="50">Homething</span>
 
-  <md-toolbar color="primary">
-    <span fxFlex="50">Homething</span>
+  <md-icon fxFlex="50" (click)="home()" id="homebtn">home</md-icon>
+  <md-icon id="logoutbtn" (click)="logout()" *ngIf="logoutbtn">exit_to_app</md-icon>
+</md-toolbar>
 
-    <md-icon>home</md-icon>
-  </md-toolbar>
-
-
-
-
-
-  <app-login></app-login>
-  <app-home></app-home>
-  <app-add></app-add>
-
-
+<router-outlet></router-outlet>
 
 
 

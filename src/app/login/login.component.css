@@ -2,7 +2,7 @@
  margin-top: 5rem;
 }
 #login {
-  background-color: red;
+  background-color: #F44336;
   color: white;
   width: 50%;
   left: 25%;
@@ -13,4 +13,9 @@ md-input-container {
 }
 h1 {
   text-align: center;
+}
+
+#validateLogin {
+  color: red;
+  font-size: large;
 }

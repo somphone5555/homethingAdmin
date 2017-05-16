@@ -5,15 +5,18 @@
       <md-card-title>
         <h1>Login</h1>
       </md-card-title>
-      <form>
+      <form novalidate [formGroup] = "fLogin">
         <md-input-container>
-          <input type="text" mdInput placeholder="username" id="user">
+          <input type="text" mdInput placeholder="username" formControlName="username" id="user">
         </md-input-container>
         <md-input-container>
-          <input type="text" mdInput placeholder="password" id="pass">
+          <input type="password" mdInput placeholder="password" formControlName="password" id="pass">
         </md-input-container>
         <md-card-actions>
-          <button md-raised-button id="login">Login</button>
+          <button md-raised-button id="login" (click)="login()">Login</button>
+        </md-card-actions>
+        <md-card-actions>
+          <span *ngIf="logined" id="validateLogin"><b>* Wrong username or password</b></span>
         </md-card-actions>
       </form>
     </md-card>
@@ -21,6 +24,3 @@
   </md-grid-tile>
 
 </md-grid-list>
-
-
-

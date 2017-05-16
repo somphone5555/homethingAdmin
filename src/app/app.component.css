@@ -1,6 +1,25 @@
 
 md-toolbar {
   position: fixed;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 999;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+
+
+}
+.mainnav {
+  position: absolute;
+
+}
+
+#homebtn {
+  cursor: pointer;
+}
+
+#logoutbtn {
+  cursor: pointer;
 
 }

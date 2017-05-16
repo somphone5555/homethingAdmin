@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+
 
 @Component({
   selector: 'app-qrcode',
   template: `
-    <p>
-      qrcode Works!
-    </p>
+    <div>
+      <qr-code [value]= 'qrcode' [size]="250"></qr-code>
+    </div>
+
   `,
-  styles: []
+  styles: [`button {
+    background-color: green;
+    color: white;
+    margin-top: 1rem;
+    width: 50%
+  }`]
 })
 export class QrcodeComponent implements OnInit {
 
-  constructor() { }
+  @Input() qrcode: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

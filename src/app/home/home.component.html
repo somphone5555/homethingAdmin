@@ -1,93 +1,66 @@
+<md-grid-list cols="{{cols}}" rowHeight="400px">
 
-  <md-grid-list cols="{{cols}}" rowHeight="400px">
-    <md-grid-tile></md-grid-tile>
-    <md-grid-tile colspan="3">
+    <md-grid-tile *ngFor="let device of devices; let i = index">
 
-      <md-card>
-        <md-card-header>
-          <button md-icon-button [mdMenuTriggerFor]="menu" class="menu">
-            <md-icon>more_vert</md-icon>
-          </button>
-          <md-icon class="led">lens</md-icon>
-          <md-menu #menu="mdMenu">
-            <button md-menu-item>
-              <md-icon>dialpad</md-icon>
-              <span>Redial</span>
-            </button>
-            <button md-menu-item disabled>
-              <md-icon>voicemail</md-icon>
-              <span>Check voicemail</span>
-            </button>
-            <button md-menu-item>
-              <md-icon>notifications_off</md-icon>
-              <span>Disable alerts</span>
-            </button>
-          </md-menu>
-        </md-card-header>
-        <img src="http://placehold.it/250x250" md-card-image alt="">
-        <md-card-content>
-            <h3>Name of Device</h3>
-        </md-card-content>
-      </md-card>
+        <md-card>
+            <md-card-header>
 
-      <md-card>
-        <md-card-header>
-          <button md-icon-button [mdMenuTriggerFor]="menu">
-            <md-icon>more_vert</md-icon>
-          </button>
-          <md-icon class="led">lens</md-icon>
-          <md-menu #menu="mdMenu">
-            <button md-menu-item>
-              <md-icon>dialpad</md-icon>
-              <span>Redial</span>
-            </button>
-            <button md-menu-item disabled>
-              <md-icon>voicemail</md-icon>
-              <span>Check voicemail</span>
-            </button>
-            <button md-menu-item>
-              <md-icon>notifications_off</md-icon>
-              <span>Disable alerts</span>
-            </button>
-          </md-menu>
-        </md-card-header>
-        <img src="http://placehold.it/250x250" md-card-image alt="">
-        <md-card-content>
-          <h3>Name of Device</h3>
-        </md-card-content>
-      </md-card>
+                <button md-icon-button [mdMenuTriggerFor]="menu" class="menu">
+                    <md-icon>more_vert</md-icon>
+                </button>
 
-      <md-card>
-        <md-card-header>
-          <button md-icon-button [mdMenuTriggerFor]="menu">
-            <md-icon>more_vert</md-icon>
-          </button>
-          <md-icon class="led">lens</md-icon>
-          <md-menu #menu="mdMenu">
-            <button md-menu-item>
-              <md-icon>dialpad</md-icon>
-              <span>Redial</span>
-            </button>
-            <button md-menu-item disabled>
-              <md-icon>voicemail</md-icon>
-              <span>Check voicemail</span>
-            </button>
-            <button md-menu-item>
-              <md-icon>notifications_off</md-icon>
-              <span>Disable alerts</span>
-            </button>
-          </md-menu>
-        </md-card-header>
-        <img src="http://placehold.it/250x250" md-card-image alt="">
-        <md-card-content>
-          <h3>Name of Device</h3>
-        </md-card-content>
-      </md-card>
+                <md-menu #menu="mdMenu">
+
+                    <button md-menu-item (click)="confirmbtn(i)">
+                        <md-icon>delete_forever</md-icon>
+                        <span>Delete</span>
+                    </button>
+                    <button md-menu-item (click)="checkbtn(i)">
+                        <md-icon>mode_edit</md-icon>
+                        <span>{{editText[i]}}</span>
+                    </button>
+                    <button md-menu-item (click)="qrState(i)">
+                        <md-icon>filter_center_focus</md-icon>
+                        <span>{{editQr[i]}}</span>
+                    </button>
+                    <button md-menu-item>
+                        <md-icon>vpn_key</md-icon>
+                        <span *ngIf="!check[i]">SC:{{device.sharecode}}</span>
+                    </button>
+
+
+                </md-menu>
+                <p *ngIf="!check[i]">ID:{{device.sdid}}</p>
+            </md-card-header>
+            <app-qrcode [qrcode]="device.sdid" *ngIf="hqr[i]"></app-qrcode>
+            <div class="confirmbox" *ngIf="confirm[i]">
+                <h3>Confirm ?</h3>
+                <button md-button id="ycon" (click)="deleteDevice(device)">YES</button>
+                <button md-button id="ncon" (click)="noconfirm(i)">NO</button>
+
+            </div>
+            <img *ngIf="!hqr[i]" src="http://placehold.it/250x250" md-card-image alt="">
+            <md-card-content>
+                <h3 *ngIf="!check[i]">{{device.nicname}}</h3>
+                <form novalidate [formGroup]="fDType" *ngIf="check[i]">
+                    <md-select placeholder="Select device Name" class="selectDevice" formControlName="dType"
+                               (change)="editDevice(device,i)">
+                        <md-option value="0">Smart swtich</md-option>
+                        <md-option value="1">Smart sensor humidity and temperature</md-option>
+                        <md-option value="2">Gass sensor</md-option>
+                        <md-option value="3">Smart alarm</md-option>
+                    </md-select>
+                </form>
+            </md-card-content>
+
+
+        </md-card>
     </md-grid-tile>
-    <md-grid-tile></md-grid-tile>
-    <button md-fab class="btn-fab">
-      <md-icon>add</md-icon>
+
+    <button md-fab class="btn-fab" class="btn-fab" (click)="add()">
+        <md-icon>add</md-icon>
     </button>
-  </md-grid-list>
+</md-grid-list>
+
 
 
